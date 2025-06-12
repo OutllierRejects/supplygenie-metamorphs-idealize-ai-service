@@ -1,7 +1,23 @@
 [project]
-name = "supplygenie-metamorphs-idealize-ai-service"
+name = "supplygenie"
 version = "0.1.0"
-description = "Add your description here"
-readme = "README.md"
-requires-python = ">=3.13"
-dependencies = []
+description = "supplygenie using crewAI"
+authors = [{ name = "Your Name", email = "you@example.com" }]
+requires-python = ">=3.10,<3.13"
+dependencies = [
+    "crewai[tools]>=0.108.0,<1.0.0"
+]
+
+[project.scripts]
+supplygenie = "supplygenie.main:run"
+run_crew = "supplygenie.main:run"
+train = "supplygenie.main:train"
+replay = "supplygenie.main:replay"
+test = "supplygenie.main:test"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.crewai]
+type = "crew"
